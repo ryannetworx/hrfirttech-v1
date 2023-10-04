@@ -2,8 +2,9 @@
     --primary-font: 'Open Sans', sans-serif;
     --secondary-font: 'Roboto', sans-serif;
     --thirtiary-font: "Raleway", sans-serif;
-    --primariy-font-color: #5b5959;
-    --secondary-font-color: #251450;
+    --primariy-font-color: #1b0d32;
+    --secondary-font-color: #636167;
+    --thirtiary-font-color: #d12a2a;
 }
 
 body {
@@ -35,104 +36,120 @@ p {
 }
 
 /* ------ Style the navigation bar */
+/* 1. This div must occupy the entire width of the screen */
+.menu {
+    width: 100%;
+}
+
+  /* 2. Inside this div are 2 parts: the left side which has the logo and the right side which has navigation links */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #faf8f8;
-    padding: 10px 20px;
-    font-family: var(--primary-font);
-    font-weight: 600;
-    font-size: 12px;
+    padding: 10px;
+    background-color: #e7e9fc; /* You can change the background color as needed */
+    font-family: var(--secondary-font);
     color: var(--primariy-font-color);
-    position: fixed; /* Fixed position for the navbar */
-    top: 0; /* Stick to the top of the viewport */
-    width: 100%; /* Occupy the full width */
-    z-index: 100; /* Ensure it's above other elements */
+    font-size: 14px;
 }
 
-/* Style the left container (logo) */
-.navbar-left {
-    display: flex;
-    align-items: center;
-    max-height: 40px; /* Set a max height for the logo */
-}
-
-/* Style the logo and set a specific height */
+  /* 3. Reduce the size of the logo to fit inside the div */
 .navbar-left img {
-    height: 40px;
-    width: auto; /* Allow the width to adjust proportionally */
+    max-width: 100px; /* Adjust the max-width as per your requirements */
 }
 
-/* Style the right container (list items and button) */
+  /* 4. .navbar-right must be on the right side with at least 20px gap from each other */
 .navbar-right {
-    display: none; /* Hide the right container by default */
-    align-items: center;
+    display: flex;
+    gap: 50px;
 }
 
-/* Style the navigation items */
+  /* 5. The links must not have any decorations, underlines or bullet points. They must be arranged from left to right. The original color must be #1b0d32 */
 .navbar-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-items li {
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+.navbar-items a {
+    text-decoration: none;
+    color: #1b0d32;
+}
+
+  /* 6. The button must not appear like a button, it must appear like a link */
+.book-demo1 {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #1b0d32;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+  /* 7. When the mouse pointer hovers over the links, the font color will change into #d12a2a */
+.navbar-items a:hover {
+    color: #d12a2a;
+}
+
+  /* 8. Make it responsive. The .navbar-right must transform into a hamburger menu when the screen gets smaller */
+/* Add styles for the hamburger button */
+.hamburger-button {
+    display: none; /* Initially hide the button */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+  /* Style the dropdown menu */
+.dropdown-menu {
+    display: none; /* Initially hide the dropdown menu */
+    position: absolute;
+    top: 100%; /* Position it below the button */
+    right: 0;
+    background-color: #ffffff; /* Background color of the dropdown */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+}
+
+.dropdown-items {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-/* Style the list item links */
-.navbar-items li {
-    margin-right: 20px;
+.dropdown-items li {
+    padding: 10px;
+    text-align: right; /* Align the text to the right */
 }
 
-.navbar-items a {
+.dropdown-items a {
     text-decoration: none;
-    color: var(--primariy-font-color);
+    color: #1b0d32;
 }
 
-/* Style the button to look like a link */
-.book-demo1 {
-    background: none;
-    border: none;
-    color: var(--primariy-font-color);
-    cursor: pointer;
-    font-size: inherit;
-    padding: 0;
-    font-family: var(--secondary-font);
-    font-weight: 600;
-    height: 100%; /* Ensure the button has the same height as the list items */
-}
-
-/* Active page style */
-.navbar-items a.active {
-    color: #ff5722;
-}
-
-/* Add hover styles to the navigation items */
-.navbar-items a:hover,
-.book-demo1:hover {
-    /* font-weight: bold; Make the text bold on hover */
-    color: #ff5722; /* Change to your desired hover color */
-    text-decoration: underline; /* Add underline on hover */
-}
-
-/* Responsive styles */
+  /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .navbar-right {
-        display: flex; /* Show the right container for smaller screens */
-        flex-direction: column;
-        align-items: center;
-    }
-
     .navbar-items {
-        margin-top: 10px; /* Add some space between the button and the list */
+      display: none; /* Hide the original navbar links */
     }
-
-    .navbar-items li {
-        margin: 10px 0;
+    
+    .hamburger-button {
+      display: block; /* Show the hamburger button */
     }
-
-    .navbar-items.active {
-        display: none; /* Hide the list when not active */
+    
+    /* Show the dropdown menu when the hamburger button is clicked */
+    .hamburger-button:hover + .dropdown-menu,
+    .hamburger-button:focus + .dropdown-menu {
+      display: block;
     }
-}
+  }
 
 /* END OF NAVIGATION BAR */
 
