@@ -146,6 +146,8 @@ p {
 .hero-section {
     display: flex; /* Use flexbox to arrange elements horizontally */
     align-items: center; /* Center vertically within the section */
+    height: 400px;
+    background-color: #F4F4FD;
 }
 
 /* Style the left side of the hero section */
