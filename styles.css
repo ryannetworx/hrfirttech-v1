@@ -36,12 +36,13 @@ p {
 }
 
 /* ------ Style the navigation bar */
+
 /* 1. This div must occupy the entire width of the screen */
 .menu {
     width: 100%;
 }
 
-  /* 2. Inside this div are 2 parts: the left side which has the logo and the right side which has navigation links */
+/* 2. Inside this div are 2 parts: the left side which has the logo and the right side which has navigation links */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -53,104 +54,91 @@ p {
     font-size: 14px;
 }
 
-  /* 3. Reduce the size of the logo to fit inside the div */
+/* 3. Reduce the size of the logo to fit inside the div */
 .navbar-left img {
     max-width: 100px; /* Adjust the max-width as per your requirements */
 }
 
-  /* 4. .navbar-right must be on the right side with at least 20px gap from each other */
+/* 4. .navbar-right must be on the right side with at least 20px gap from each other */
 .navbar-right {
     display: flex;
     gap: 50px;
 }
 
-  /* 5. The links must not have any decorations, underlines or bullet points. They must be arranged from left to right. The original color must be #1b0d32 */
+/* 5. The links must not have any decorations, underlines or bullet points. They must be arranged from left to right. The original color must be #1b0d32 */
 .navbar-items {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: 50px;
+    align-items: center;
+
 }
 
 .navbar-items li {
-    font-size: 16px; /* Adjust the font size as needed */
+    font-size: 14px; /* Adjust the font size as needed */
+    font-family: var(--secondary-font);
+    font-weight: 450;
 }
 
 .navbar-items a {
     text-decoration: none;
     color: #1b0d32;
+    transition: color 0.3s; /* Add transition for smoother color change on hover */
 }
 
-  /* 6. The button must not appear like a button, it must appear like a link */
+/* 6. The button must not appear like a button, it must appear like a link */
 .book-demo1 {
     background: none;
     border: none;
     padding: 0;
-    font-size: 16px; /* Adjust the font size as needed */
     color: #1b0d32;
     cursor: pointer;
     margin-right: 40px;
+    font-size: 14px; /* Adjust the font size as needed */
+    font-family: var(--secondary-font);
+    font-weight: 450;
 }
 
-  /* 7. When the mouse pointer hovers over the links, the font color will change into #d12a2a */
-.navbar-items a:hover {
+/* 7. When the mouse pointer hovers over the links, the font color will change into #d12a2a */
+.navbar-items a:hover,
+.book-demo1:hover {
     color: #d12a2a;
+    text-decoration: underline;
 }
 
-  /* 8. Make it responsive. The .navbar-right must transform into a hamburger menu when the screen gets smaller */
-/* Add styles for the hamburger button */
-.hamburger-button {
-    display: none; /* Initially hide the button */
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-  /* Style the dropdown menu */
-.dropdown-menu {
-    display: none; /* Initially hide the dropdown menu */
-    position: absolute;
-    top: 100%; /* Position it below the button */
-    right: 0;
-    background-color: #ffffff; /* Background color of the dropdown */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
-}
-
-.dropdown-items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-items li {
-    padding: 10px;
-    text-align: right; /* Align the text to the right */
-}
-
-.dropdown-items a {
-    text-decoration: none;
-    color: #1b0d32;
-}
-
-  /* Media query for smaller screens */
+/* 8. Make it responsive. The .navbar-right must transform into a hamburger menu when the screen gets smaller */
 @media (max-width: 768px) {
-    .navbar-items {
-      display: none; /* Hide the original navbar links */
+    .navbar-items,
+    .book-demo1 {
+        display: none; /* Hide the original navbar links and "Book A Demo" button */
     }
-    
-    .hamburger-button {
-      display: block; /* Show the hamburger button */
-    }
-    
-    /* Show the dropdown menu when the hamburger button is clicked */
-    .hamburger-button:hover + .dropdown-menu,
-    .hamburger-button:focus + .dropdown-menu {
-      display: block;
-    }
-  }
 
+    /* Show the menu toggle button */
+    .menu-toggle-button {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #1b0d32;
+        margin-right: 20px; /* Add some margin for spacing */
+    }
+
+    /* Show the dropdown menu when the menu toggle button is clicked */
+    .menu-toggle-button:checked + .navbar-right {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        position: absolute;
+        top: 100%; /* Position it below the button */
+        right: 0;
+        background-color: #ffffff; /* Background color of the dropdown */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Optional box shadow */
+        width: 100%; /* Make it full width */
+        padding: 10px; /* Add some padding for spacing */
+    }
+}
 /* END OF NAVIGATION BAR */
 
 
