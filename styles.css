@@ -1,0 +1,227 @@
+:root {
+    --primary-font: 'Open Sans', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+    --thirtiary-font: "Raleway", sans-serif;
+    --primariy-font-color: #5b5959;
+    --secondary-font-color: #251450;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    font-weight: 900;
+}
+
+h2 {
+    font-family: var(--secondary-font);
+    font-size: 15px;
+}
+
+/* ------ Style the navigation bar */
+.navbar-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #faf8f8; /* Change to your desired background color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-family: var(--primary-font); /* Use the primary font here */
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--primariy-font-color);
+}
+
+/* Style the navigation items */
+.navbar-items li {
+    display: inline;
+    margin-right: 20px; /* Adjust spacing between items */
+}
+
+.navbar-items a {
+    text-decoration: none;
+    color: var(--primariy-font-color);
+    padding: 0 20px; /* Adjust the padding to control spacing */
+}
+
+/* Style the active page */
+.navbar-items a.active {
+    color: #ff5722; /* Change to your desired active page color */
+}
+
+/* Style the button to look like a link */
+.book-demo1 {
+    background: none;
+    border: none;
+    color: var(--primariy-font-color);
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0;
+    font-family: var(--secondary-font);
+    font-weight: 600;
+}
+
+/* Ensure the button has the same height as the navigation items */
+.book-demo1 {
+    height: 100%;
+}
+
+/* Style the logo and set a specific width */
+.navbar-logo img {
+    max-height: 100%;
+    width: 100px; /* Adjust the width to your desired size */
+}
+
+/* Add hover styles to the navigation items */
+.navbar-items a:hover,
+.book-demo1:hover {
+    /* font-weight: bold; Make the text bold on hover */
+    color: #ff5722; /* Change to your desired hover color */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* END OF NAVIGATION BAR */
+
+
+/* ------ Style of Hero Section */
+.hero-section {
+    display: flex; /* Use flexbox to arrange elements horizontally */
+    align-items: center; /* Center vertically within the section */
+}
+
+/* Style the left side of the hero section */
+.hero-left {
+    flex: 1; /* Take up equal horizontal space with hero-images */
+    padding: 20px;
+    max-width: 50%; /* Adjust the max-width to control the text content size */
+}
+
+/* Style the text inside the left side */
+.hero-left h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Style the button inside the left side */
+.hero-left button {
+    background-color: #ff5722; /* Change to your desired button color */
+    color: #fff;
+    padding: 10px 20px;
+    font: var(--secondary-font);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the right side of the hero section */
+.hero-images {
+    flex: 1; /* Take up equal horizontal space with hero-left */
+    max-width: 50%; /* Adjust the max-width to control the image size */
+    position: relative;
+    overflow: hidden; /* Hide overflow content */
+}
+
+/* Style the image containers */
+.image-container {
+    display: none; /* Hide all image containers by default */
+    max-width: 100%; /* Set a maximum width to fit the container */
+    max-height: 300px; /* Set a maximum height as needed */
+    overflow: hidden; /* Hide any overflow content */
+    margin: 0 auto; /* Center the image horizontally within the container */
+}
+
+/* Style the hero images */
+.hero-images img {
+    max-width: 100%; /* Ensure the image doesn't exceed the width of the container */
+    max-height: 100%; /* Ensure the image doesn't exceed the height of the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+/* Style the current image container */
+.image-container.active {
+    display: block; /* Show the active image container */
+}
+
+/* END OF HERO SECTION */
+
+
+/* -------  Start of Table Section */
+
+.core-hr {
+    margin-top: 80px; /* away from the bottom of .banner1 */
+    margin-left: 50px; /* Add 50px margin from the left */
+    margin-right: 50px; /* Add 50px margin from the right */
+}
+
+.section-content-1 p {
+    min-height: 72px; /* Adjust the height as needed for at least 3 lines of text */
+}
+
+/* Remove list decorations */
+.section-content-1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Align table headings with h3 attributes */
+.section-content-1 table {
+    margin: 0 auto; /* Center the table horizontally */
+    max-width: 264px; /* Set a maximum width for the table */
+    border-collapse: collapse;
+}
+
+.section-content-1 th {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 2%;
+    color: #2E2F42;
+    text-align: left;
+    padding: 10px;
+}
+
+/* Align paragraphs with .body attributes */
+.section-content-1 td {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 2%;
+    line-height: 24px;
+    color: var(--primary-body-color);
+    text-align: left;
+    padding: 10px;
+}
+
+.feature-box {
+    width: 264px;
+    height: 112px;
+    border-radius: 4px;
+    background-color: #F4F4FD;
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.feature-box img {
+    width: 64px;
+    height: 64px;
+}
+
+/* Responsive table - split into two columns on smaller screens */
+@media (max-width: 768px) {
+    .section-content-1 table {
+        display: block;
+    }
+
+    .section-content-1 td,
+    .section-content-1 th {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* END OF TABLE 1 */
