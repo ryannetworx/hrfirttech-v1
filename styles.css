@@ -16,6 +16,12 @@ h2 {
     font-size: 15px;
 }
 
+h3 {
+    font-family: var(--secondary-font);
+    font-size: 14px;
+    color: var(--secondary-font-color);
+}
+
 /* ------ Style the navigation bar */
 .navbar-items {
     list-style: none;
